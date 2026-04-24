@@ -17,10 +17,3 @@ Official website and portfolio of **CodLod Software Development Studio**. This r
 * **SEO Optimized:** Built with search engine visibility in mind.
 
 ## 🛠 Getting Started
-
-First, install the dependencies:
-
-```bash
-npm install
-# or
-yarn install
