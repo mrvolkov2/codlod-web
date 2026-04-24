@@ -1,37 +1,26 @@
-# codlod-web
-Official website and portfolio of CodLod Software Development Studio.
+# CodLod — Official Web Presence
 
-CodLod — Official Web Presence
-Official website and portfolio of CodLod Software Development Studio. This repository contains the frontend and core logic of our digital home.
+Official website and portfolio of **CodLod Software Development Studio**. This repository contains the source code for our digital home, showcasing our expertise in building high-performance web applications.
 
-🛠 Tech Stack
-Framework: Next.js (App Router)
+## 🛠 Tech Stack
 
-Styling: Tailwind CSS
+* **Framework:** [Next.js](https://nextjs.org/) (App Router)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Language:** TypeScript
+* **Deployment:** [Vercel](https://vercel.com/)
 
-Language: TypeScript
+## 🚀 Key Features
 
-Deployment: Vercel
+* **Performance First:** Optimized for Core Web Vitals.
+* **Modern UI:** Responsive design with a focus on "clean code" and professional aesthetics.
+* **Dark Theme:** Native dark mode support for an eye-friendly experience.
+* **SEO Optimized:** Built with search engine visibility in mind.
 
-🚀 Project Goal
-The site serves as a central hub for our services, showcasing our approach to "clean code" and modern UI/UX standards. We focus on performance, SEO, and intuitive user experiences.
+## 🛠 Getting Started
 
-🛠 Getting Started
 First, install the dependencies:
 
-Bash
+```bash
 npm install
 # or
 yarn install
-Then, run the development server:
-
-Bash
-npm run dev
-# or
-yarn dev
-Open http://localhost:3000 with your browser to see the result.
-
-📬 Contacts
-Website: codlod.com
-
-Email: support@codlod.com
