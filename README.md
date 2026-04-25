@@ -4,9 +4,9 @@
 
 # CodLod — Official Web Presence
 
-**🌐 Visit us: [codlod.com](https://codlod.com)**
+**🌐 Visit us: [codlod.com](http://codlod.com)**
 
-Official website and portfolio of **[CodLod Software Development Studio](https://codlod.com)**. This repository contains the source code for our digital home, showcasing our expertise in building high-performance web applications.
+Official website and portfolio of **[CodLod Software Development Studio](http://codlod.com)**. This repository contains the source code for our digital home, showcasing our expertise in building high-performance web applications.
 
 ## 🛠 Tech Stack
 
