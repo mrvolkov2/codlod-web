@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodLod - The creative rush</title>
 
-    <!--FavIco as amodsi for begining-->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
-    
     
     <style>
         * {
@@ -16,12 +14,68 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --accent-color: #00e5ff;
+            --text-secondary: #516087;
+        }
+
         body {
             background-color: #050914; 
             overflow: hidden; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
         }
 
+        /* Шапка сайта */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            opacity: 0.8;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+            opacity: 1;
+        }
+
+        .btn-glow {
+            padding: 8px 18px;
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+        }
+
+        /* Контент */
         canvas {
             display: block;
             position: absolute;
@@ -38,7 +92,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
             pointer-events: none; 
             text-align: center;
             padding: 0 20px;
@@ -50,61 +103,83 @@
             text-transform: uppercase;
             text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
             margin-bottom: 15px;
-            /* Анимация появления заголовка */
             animation: fadeInDown 1s ease-out;
         }
 
-        /* Новый стиль для анимированного слогана */
         .slogan {
             font-size: 1.2rem;
             letter-spacing: 3px;
             font-weight: 300;
             text-transform: uppercase;
-            /* Настраиваем градиент для эффекта бегущей волны */
-            background: linear-gradient(90deg, #516087 0%, #00e5ff 50%, #516087 100%);
+            background: linear-gradient(90deg, var(--text-secondary) 0%, var(--accent-color) 50%, var(--text-secondary) 100%);
             background-size: 200% auto;
             color: transparent;
             -webkit-background-clip: text;
             background-clip: text;
-            /* Комбинируем две анимации: всплытие + бесконечный блик */
             animation: fadeInUp 1.2s ease-out, shine 3s linear infinite;
+            margin-bottom: 40px;
         }
 
-        /* Ключевые кадры для анимаций */
-        @keyframes shine {
-            to {
-                background-position: 200% center;
-            }
+        /* Кнопка { code } */
+        .engine-container {
+            pointer-events: auto; /* Делаем кнопку кликабельной */
+            animation: fadeInUp 1.5s ease-out;
         }
 
+        .code-block {
+            display: inline-block;
+            padding: 15px 30px;
+            border: 2px solid var(--accent-color);
+            border-radius: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(0, 229, 255, 0.05);
+        }
+
+        .code-block span {
+            font-weight: bold;
+        }
+
+        .code-block:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 30px var(--accent-color);
+            background: rgba(0, 229, 255, 0.15);
+            color: white;
+        }
+
+        /* Анимации */
+        @keyframes shine { to { background-position: 200% center; } }
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="logo">CODLOD<span> STUDIO</span></div>
+        <nav>
+            <a href="#projects">Проекты</a>
+            <a href="https://myrating.autos" target="_blank">MyRating</a>
+            <a href="#contact" class="btn-glow">Запустить проект</a>
+        </nav>
+    </header>
+
     <div class="content">
         <h1>Codlod</h1>
         <p class="slogan">The creative rush you're feeling right now</p>
+        
+        <div class="engine-container">
+            <div class="code-block"><span>{</span> code <span>}</span></div>
+        </div>
     </div>
 
     <canvas id="canvas1"></canvas>
@@ -116,12 +191,7 @@
         canvas.height = window.innerHeight;
 
         let particlesArray;
-
-        let mouse = {
-            x: null,
-            y: null,
-            radius: 120 
-        }
+        let mouse = { x: null, y: null, radius: 120 }
 
         window.addEventListener('mousemove', function(event) {
             mouse.x = event.x;
@@ -138,40 +208,32 @@
                 this.color = color;
                 this.density = (Math.random() * 30) + 1; 
             }
-            
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
                 ctx.fillStyle = '#00e5ff'; 
                 ctx.fill();
             }
-            
             update() {
-                if (this.x > canvas.width || this.x < 0) {
-                    this.directionX = -this.directionX;
-                }
-                if (this.y > canvas.height || this.y < 0) {
-                    this.directionY = -this.directionY;
-                }
+                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
 
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx * dx + dy * dy);
-                let forceDirectionX = dx / distance;
-                let forceDirectionY = dy / distance;
-                let maxDistance = mouse.radius;
-                let force = (maxDistance - distance) / maxDistance;
-                let directionX = forceDirectionX * force * this.density;
-                let directionY = forceDirectionY * force * this.density;
 
                 if (distance < mouse.radius) {
+                    let forceDirectionX = dx / distance;
+                    let forceDirectionY = dy / distance;
+                    let maxDistance = mouse.radius;
+                    let force = (maxDistance - distance) / maxDistance;
+                    let directionX = forceDirectionX * force * this.density;
+                    let directionY = forceDirectionY * force * this.density;
                     this.x -= directionX;
                     this.y -= directionY;
                 }
-
                 this.x += this.directionX;
                 this.y += this.directionY;
-                
                 this.draw();
             }
         }
@@ -179,28 +241,24 @@
         function init() {
             particlesArray = [];
             let numberOfParticles = (canvas.height * canvas.width) / 10000; 
-            
             for (let i = 0; i < numberOfParticles; i++) {
                 let size = (Math.random() * 2) + 1;
                 let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
                 let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
                 let directionX = (Math.random() * 1.5) - 0.75; 
                 let directionY = (Math.random() * 1.5) - 0.75; 
-                let color = '#00e5ff';
-
-                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, '#00e5ff'));
             }
         }
 
         function connect() {
-            let opacityValue = 1;
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a; b < particlesArray.length; b++) {
                     let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
                     + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
                     
                     if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-                        opacityValue = 1 - (distance / 15000); 
+                        let opacityValue = 1 - (distance / 20000); 
                         ctx.strokeStyle = 'rgba(0, 229, 255,' + opacityValue + ')';
                         ctx.lineWidth = 1;
                         ctx.beginPath();
@@ -215,7 +273,6 @@
         function animate() {
             requestAnimationFrame(animate);
             ctx.clearRect(0, 0, innerWidth, innerHeight);
-
             for (let i = 0; i < particlesArray.length; i++) {
                 particlesArray[i].update();
             }
